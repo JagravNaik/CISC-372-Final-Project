@@ -1,0 +1,5 @@
+#! /bin/bash
+#SBATCH -A see200002p
+#SBATCH -J myjob
+gcc -o serial serial_matrix.c
+./serial
