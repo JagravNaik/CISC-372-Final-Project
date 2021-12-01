@@ -28,6 +28,10 @@ int main(void) {
 	fillMatrix(matrix_one, 1, 100, row_matrix_1 * col_matrix_1);
 	fillMatrix(matrix_two, 1, 100, row_matrix_2 * col_matrix_2);
 
+	
+	// start clock
+	clock_t start = clock();
+
 	// multiply the matrices
 	for (int i = 0; i < 10; i++) {
 		for(int i = 0; i < row_matrix_1; i++ ){
@@ -47,6 +51,11 @@ int main(void) {
 	free(matrix_one);
 	free(matrix_two);
 	free(matrix_three);
+
+	// stop clock
+	clock_t end = clock();
+	double time_spent = (double)(end - start) / CLOCKS_PER_SEC;
+	printf("Time spent: %f\n", time_spent);
 
 	return 0;
 // This code is contributed by Manish Kumar (mkumar2789)
