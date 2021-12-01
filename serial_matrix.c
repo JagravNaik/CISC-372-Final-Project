@@ -1,48 +1,9 @@
-/*
-* This C program can multiply any two square or rectangular matrices.
-* The below program multiplies two square matrices of size 4 * 4.
-* There is also an example of a rectangular matrix for the same code (commented below).
-* We can change the Matrix value with the number of rows and columns (from MACROs) for Matrix-1
-* and Matrix-2 for different dimensions.
-*/
-
-/*
-* Note: i- The number of columns in Matrix-1 must be equal to the number of rows in Matrix-2.
-*	 ii- Output of multiplicationof Matrix-1 and Matrix-2, results with equalto the number
-*		 of rows of Matrix-1 and thenumber of columns of Matrix-2 i.e. rslt[R1][C2].
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 
-// Edit MACROs here, according to your Matrix Dimensions for mat1[R1][C1] and mat2[R2][C2]
-#define R1 4		 // number of rows in Matrix-1
-#define C1 4		 // number of columns in Matrix-1
-#define R2 4		 // number of rows in Matrix-2
-#define C2 4		 // number of columns in Matrix-2
-
-void mulMat(int mat1[][C1], int mat2[][C2]) {
-	int rslt[R1][C2];
-
-	printf("Multiplication of given two matrices is:\n\n");
-
-	for (int i = 0; i < R1; i++) {
-		for (int j = 0; j < C2; j++) {
-			rslt[i][j] = 0;
-
-			for (int k = 0; k < R2; k++) {
-				rslt[i][j] += mat1[i][k] * mat2[k][j];
-			}
-
-			printf("%d\t", rslt[i][j]);
-		}
-
-		printf("\n");
-	}
-}
-
-void fillMatrix(int min, int max, int size, float *mat) {
+void fillMatrix(float *mat, int min, int max, int size) {
 	srand(time(NULL));
 	for (int i = 0; i < size; i++) {
 		mat[i] = (rand() % (max - min + 1)) + min;
@@ -50,7 +11,6 @@ void fillMatrix(int min, int max, int size, float *mat) {
 }
 
 int main(void) {
-
 	// create the matrices, 2 that contain the numbers we want to multiply
 	int row_matrix_1 = 900; int row_matrix_2 = 900; 
 	int col_matrix_1 = 900; int col_matrix_2 = 600;
@@ -65,8 +25,8 @@ int main(void) {
 	float sum = 0;
 
 	// fill the matrices with random numbers
-	fillMatrix(matrix_one, 100, row_matrix_1*col_matrix_1, matrix_one);
-	fillMatrix(matrix_two, 100, row_matrix_2*col_matrix_2, matrix_two);
+	fillMatrix(matrix_one, 1, 100, row_matrix_1 * col_matrix_1);
+	fillMatrix(matrix_two, 1, 100, row_matrix_2 * col_matrix_2);
 
 	// multiply the matrices
 	for (int i = 0; i < 10; i++) {
@@ -79,8 +39,8 @@ int main(void) {
 				matrix_three[i* col_matrix_3 + j]=sum;
 			}
 		}
+		printf("Multiplication done");
 	}
-
 
 	// free the memory allocation
 	free(matrix_one);
