@@ -36,11 +36,12 @@ int main(void) {
 
 	// print that multiplication is happening
 	printf("Multiplying the matrices...\n");
-
+#pragma acc loop
 	for (int i = 0; i < 10; i++) {
 		for(int i = 0; i < row_matrix_1; i++ ){
 			for(int j = 0; j < col_matrix_2; j++){
 				sum = 0;
+				#pragma acc loop reduction(+:sum)
 				for(int k = 0; k < col_matrix_1; k++){
 					//printf("%f * %f = %f\n", matrix_one[i*col_matrix_1 + k], matrix_two[k*col_matrix_2 + j], sum);
 					sum += matrix_one[i*col_matrix_1+k]* matrix_two[k*col_matrix_2+k];
