@@ -27,3 +27,6 @@ module load gcc/10.2.0 <br />
 module load nvhpc/21.7 <br />
 module load cuda/11.1.1 <br />
 
+To run the serial code, run the sbatch file <br />
+It will compile and run the code
+
