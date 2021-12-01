@@ -15,6 +15,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
 // Edit MACROs here, according to your Matrix Dimensions for mat1[R1][C1] and mat2[R2][C2]
 #define R1 4		 // number of rows in Matrix-1
 #define C1 4		 // number of columns in Matrix-1
@@ -43,61 +44,35 @@ void mulMat(int mat1[][C1], int mat2[][C2]) {
 
 void fillMatrix(int min, int max, int size, float *mat) {
 	srand(time(NULL));
-	for (int i = 0; i < mat; i++) {
+	for (int i = 0; i < size; i++) {
 		mat[i] = (rand() % (max - min + 1)) + min;
 	}
 }
 
 int main(void) {
 
-int num_rows_A = 900; int num_rows_B = 900; int num_rows_C = 900;
-int num_cols_A = 900; int num_cols_B = 600; int num_cols_C = 600;
+	// create the matrices, 2 that contain the numbers we want to multiply
+	int row_matrix_1 = 900; int row_matrix_2 = 900; 
+	int col_matrix_1 = 900; int col_matrix_2 = 600;
+	
+	// creating 3rd matrix to hold the final value
+	int row_matrix_3 = 900; int col_matrix_3 = 600;
 
-// 	// Square Matrices
-// 	// R1 = 4, C1 = 4 and R2 = 4, C2 = 4 (Update these values in MACROs)
-// 	/*int mat1[R1][C1] = {
-// 			{1, 1, 1, 1},
-// 			{2, 2, 2, 2},
-// 			{3, 3, 3, 3},
-// 			{4, 4, 4, 4}
-// 	};
 
-// 	int mat2[R2][C2] = {
-// 			{1, 1, 1, 1},
-// 			{2, 2, 2, 2},
-// 			{3, 3, 3, 3},
-// 			{4, 4, 4, 4}
-// 	};
+	float *ONEM = (float*) malloc(sizeof(float)*row_matrix_1*col_matrix_1);
+	float *TWOM = (float*) malloc(sizeof(float)*row_matrix_2*col_matrix_2);
+	float *THREEM = (float*) malloc(sizeof(float)*row_matrix_3*col_matrix_3);
 
-// 	/*
-// 	// Rectangular Matrices
-// 	// R1 = 3, C1 = 4 and R2 = 4, C2 = 3 (Update these values in MACROs)
-// 	int mat1[R1][C1] = {
-// 			{1, 1, 1, 1},
-// 			{2, 2, 2, 2},
-// 			{3, 3, 3, 3}
-// 	};
+	float sum = 0;
 
-// 	int mat2[R2][C2] = {
-// 			{1, 1, 1},
-// 			{2, 2, 2},
-// 			{3, 3, 3},
-// 			{4, 4, 4}
-// 	};
-// 	*/
-
-// 	if (C1 != R2) {
-// 		printf("The number of columns in Matrix-1 must be equal to the number of rows in "
-// 				"Matrix-2\n");
-// 		printf("Please update MACROs value according to your array dimension in "
-// 				"#define section\n");
-
-// 		exit(EXIT_FAILURE);
-// 	}
-
-// 	mulMat(mat1, mat2);
-
-// 	return 0;
-// }
-
+	for(int i = 0; i < row_matrix_1; i++ ){
+		for(int j = 0; j < col_matrix_2; j++){
+			sum = 0;
+			for(int k = 0; k < col_matrix_1; k++){
+				sum += ONEM[i*col_matrix_1+k]* TWOM[k*col_matrix_2+k];
+			}
+			THREEM[i* col_matrix_3 + j]=sum;
+		}
+	}
 // This code is contributed by Manish Kumar (mkumar2789)
+}
