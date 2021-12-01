@@ -58,10 +58,9 @@ int main(void) {
 	// creating 3rd matrix to hold the final value
 	int row_matrix_3 = 900; int col_matrix_3 = 600;
 
-
-	float *ONEM = (float*) malloc(sizeof(float)*row_matrix_1*col_matrix_1);
-	float *TWOM = (float*) malloc(sizeof(float)*row_matrix_2*col_matrix_2);
-	float *THREEM = (float*) malloc(sizeof(float)*row_matrix_3*col_matrix_3);
+	float *matrix_one = (float*) malloc(sizeof(float)*row_matrix_1*col_matrix_1);
+	float *matrix_two = (float*) malloc(sizeof(float)*row_matrix_2*col_matrix_2);
+	float *matrix_three = (float*) malloc(sizeof(float)*row_matrix_3*col_matrix_3);
 
 	float sum = 0;
 
@@ -69,9 +68,9 @@ int main(void) {
 		for(int j = 0; j < col_matrix_2; j++){
 			sum = 0;
 			for(int k = 0; k < col_matrix_1; k++){
-				sum += ONEM[i*col_matrix_1+k]* TWOM[k*col_matrix_2+k];
+				sum += matrix_one[i*col_matrix_1+k]* matrix_two[k*col_matrix_2+k];
 			}
-			THREEM[i* col_matrix_3 + j]=sum;
+			matrix_three[i* col_matrix_3 + j]=sum;
 		}
 	}
 // This code is contributed by Manish Kumar (mkumar2789)
