@@ -68,14 +68,25 @@ int main(void) {
 	fillMatrix(matrix_one, 100, row_matrix_1*col_matrix_1, matrix_one);
 	fillMatrix(matrix_two, 100, row_matrix_2*col_matrix_2, matrix_two);
 
-	for(int i = 0; i < row_matrix_1; i++ ){
-		for(int j = 0; j < col_matrix_2; j++){
-			sum = 0;
-			for(int k = 0; k < col_matrix_1; k++){
-				sum += matrix_one[i*col_matrix_1+k]* matrix_two[k*col_matrix_2+k];
+	// multiply the matrices
+	for (int i = 0; i < 10; i++) {
+		for(int i = 0; i < row_matrix_1; i++ ){
+			for(int j = 0; j < col_matrix_2; j++){
+				sum = 0;
+				for(int k = 0; k < col_matrix_1; k++){
+					sum += matrix_one[i*col_matrix_1+k]* matrix_two[k*col_matrix_2+k];
+				}
+				matrix_three[i* col_matrix_3 + j]=sum;
 			}
-			matrix_three[i* col_matrix_3 + j]=sum;
 		}
 	}
+
+
+	// free the memory allocation
+	free(matrix_one);
+	free(matrix_two);
+	free(matrix_three);
+
+	return 0;
 // This code is contributed by Manish Kumar (mkumar2789)
 }
