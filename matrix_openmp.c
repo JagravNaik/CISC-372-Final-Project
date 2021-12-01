@@ -12,11 +12,11 @@ void fillMatrix(float *mat, int min, int max, int size) {
 
 int main(void) {
 	// create the matrices, 2 that contain the numbers we want to multiply
-	int row_matrix_1 = 900; int row_matrix_2 = 900;
-	int col_matrix_1 = 900; int col_matrix_2 = 600;
+	int row_matrix_1 = 3000; int row_matrix_2 = 3000;
+	int col_matrix_1 = 3000; int col_matrix_2 = 2700;
 	
 	// creating 3rd matrix to hold the final value
-	int row_matrix_3 = 900; int col_matrix_3 = 600;
+	int row_matrix_3 = 3000; int col_matrix_3 = 2700;
 
 	float *matrix_one = (float*) malloc(sizeof(float)*row_matrix_1*col_matrix_1);
 	float *matrix_two = (float*) malloc(sizeof(float)*row_matrix_2*col_matrix_2);
