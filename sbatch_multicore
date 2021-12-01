@@ -1,0 +1,4 @@
+#!/bin/bash
+#SBATCH -A see200002p
+#SBATCH -J myjob
+nsys profile --trace openacc ./multicore
