@@ -64,6 +64,10 @@ int main(void) {
 
 	float sum = 0;
 
+	// fill the matrices with random numbers
+	fillMatrix(matrix_one, 100, row_matrix_1*col_matrix_1, matrix_one);
+	fillMatrix(matrix_two, 100, row_matrix_2*col_matrix_2, matrix_two);
+
 	for(int i = 0; i < row_matrix_1; i++ ){
 		for(int j = 0; j < col_matrix_2; j++){
 			sum = 0;
