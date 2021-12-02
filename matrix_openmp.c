@@ -40,7 +40,7 @@ int main(void) {
 
 	#pragma omp parallel for
 	for (int i = 0; i < 10; i++) {
-		#pragma omp parallel for private(row_matrix_1, col_matrix_1, row_matrix_2, col_matrix_2, row_matrix_3, col_matrix_3)
+		#pragma omp parallel for private(row_matrix_1, col_matrix_1, col_matrix_2, col_matrix_3)
 		for(int i = 0; i < row_matrix_1; i++ ){
 			for(int j = 0; j < col_matrix_2; j++){
 				sum = 0;
