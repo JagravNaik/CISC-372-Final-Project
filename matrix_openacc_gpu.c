@@ -11,7 +11,7 @@ void fillMatrix(float *mat, int min, int max, int size) {
 	}
 }
 
-int main(void) {
+void multiply() {
 	// create the matrices, 2 that contain the numbers we want to multiply
 	int row_matrix_1 = 3000; int row_matrix_2 = 3000;
 	int col_matrix_1 = 3000; int col_matrix_2 = 2700;
@@ -28,10 +28,6 @@ int main(void) {
 	// fill the matrices with random numbers
 	fillMatrix(matrix_one, 1, 100, row_matrix_1 * col_matrix_1);
 	fillMatrix(matrix_two, 1, 100, row_matrix_2 * col_matrix_2);
-
-	
-	// start clock
-	clock_t start = clock();
 
 	// multiply the matrices
 
@@ -59,11 +55,19 @@ int main(void) {
 	free(matrix_two);
 	free(matrix_three);
 
+// This code is contributed by Manish Kumar (mkumar2789)
+}
+
+int main() {
+	// calls the multiple function
+
+	// start clock
+	clock_t start = clock();
+
+	multiply();
+	
 	// stop clock
 	clock_t end = clock();
 	double time_spent = (double)(end - start) / CLOCKS_PER_SEC;
 	printf("Time: %f seconds\n", time_spent);
-
-	return 0;
-// This code is contributed by Manish Kumar (mkumar2789)
 }
