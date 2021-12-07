@@ -35,3 +35,6 @@ EXCECUTING CODES:
 * To run the OpenACC GPU code, run the "**sbatch_openacc**" file with the command sbatch "**sbatch_openacc**". <br />
 * After you batch your the code you will get a "**slurm-#.out**" file to see our output times you will have to use the command "**cat slurm-#.out**". <br />
 
+ISSUES: 
+* Using OpenMP multicore, "**matrix_openmp.c**" time increases when adding more threads, tried **#pragma omp parallel schedule(dynamic, 2)** in order to distribute the loop iterations, and go trough the first matrix then the second, with the chunk size of 2. sadly this method did not work, giving us a segmentation fault error. trying to add **#pragma omp parallel shared(row_matrix_1, col_matrix_1, col_matrix_2, col_matrix_3)** we wanted to share the data of this variables in order to threads have access to the copy in order to make the program hava better timming, using shared clause, also ended in a segmentation fault error. Finally after trying a lot we added what gave us the best timing and runned. 
+
