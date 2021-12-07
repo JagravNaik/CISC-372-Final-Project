@@ -27,6 +27,12 @@ module load gcc/10.2.0 <br />
 module load nvhpc/21.7 <br />
 module load cuda/11.1.1 <br />
 
-To run the serial code, run the sbatch file <br />
-It will compile and run the code
+EXCECUTING CODES: 
+To run the serial code, run the sbatch_serial file with the command sbatch sbatch_serial. <br />
+To run the OpenMP multicore code, run the sbatch_openmp file with the command sbatch sbatch_openmp. <br />
+In order to change the number of threads uncoment the number of threads you wish in the sbatch_openmp file and comment the unused code.<br />
+To run the OpenACC multicore code, run the sbatch_multicore file with the command sbatch sbatch_multicore <br />
+In order to change the number of threads uncoment the number of threads you wish in the sbatch_multicore file and comment the unused code.<br />
+To run the OpenACC GPU code, run the sbatch_openacc file with the command sbatch sbatch_openacc <br />
+After you batch your the code you will get a slurm-#.out file to see our output times you will have to use the command cat slurm-#.out <br />
 
