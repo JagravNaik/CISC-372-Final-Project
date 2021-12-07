@@ -1,4 +1,10 @@
 #!/bin/bash
 #SBATCH -A see200002p
 #SBATCH -J myjob
-nsys profile --trace openacc ./multicore
+export ACC_NUM_CORES=2
+#export ACC_NUM_CORES=4
+#export ACC_NUM_CORES=8
+#export ACC_NUM_CORES=16
+#export ACC_NUM_CORES=32
+nvc -acc -ta=multicore -Minfo=accel -o multicore matrix_openacc_multicore.c 
+./multicore
