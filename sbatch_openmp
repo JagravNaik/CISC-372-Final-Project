@@ -1,7 +1,5 @@
 #!/bin/bash
 #SBATCH -A see200002p
-#SBATCH -p GPU-shared #GPU-shared-partition
-#SBATCH --gpus=v100-32:1 #allocation 1 v100 gpu(i.e.=v100-32:5 allocates 5 GPUS)
 #SBATCH -J myjob
-nvc -Minfo=mp -mp=gpu -o matrix_openmp matrix_openmp.c
+nvc -mp -Minfo=accel -o matrix_openmp matrix_openmp.c
 ./matrix_openmp
