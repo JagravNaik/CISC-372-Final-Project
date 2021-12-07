@@ -1,8 +1,7 @@
 #!/bin/bash
 #SBATCH -A see200002p
 #SBATCH -J myjob
-export OMP_NUM_THREADS=1
-#export OMP_NUM_THREADS=2
+export OMP_NUM_THREADS=2
 #export OMP_NUM_THREADS=4
 #export OMP_NUM_THREADS=8
 #export OMP_NUM_THREADS=16
