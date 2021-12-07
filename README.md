@@ -2,9 +2,9 @@
 
 TEAM MEMBERS:
 
-Jagrav Naik (jnaik@udel.edu) @jagravnaik
+Jagrav Naik (jnaik@udel.edu) [@jagravnaik](https://www.github.com/jagravnaik)
 
-Sebastian Gomez (sgomez@udel.edu) @sebanasho
+Sebastian Gomez (sgomez@udel.edu) [@sebanasho](https://www.github.com/sebanasho)
 
 INTRODUCTION TO CODE:
 * We create 2 matrices
